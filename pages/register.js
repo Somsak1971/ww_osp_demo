@@ -9,12 +9,10 @@ import {
 import { HiOutlineMail } from "react-icons/hi";
 import { FcPrivacy } from "react-icons/fc";
 import { BsCheckCircle, BsExclamationCircle } from "react-icons/bs";
-import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 
-export default function regisForm() {
+export default function RegisForm() {
 
-  const router = useRouter()
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
   return (

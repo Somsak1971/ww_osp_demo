@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { FaRegEnvelope } from "react-icons/fa";
 import { MdLockOutline } from "react-icons/md";
+import Link from 'next/link';
 
 
 export default function login() {
@@ -37,12 +38,16 @@ export default function login() {
                     />
                   </div>
                   <div className="block my-3 sm:flex sm:justify-between">
-                    <a href="/register" className="block text-left mx-2 p-2 text-xs">
+                    <Link href="/register">
+                    <a className="block text-left mx-2 p-2 text-xs">
                       ลงทะเบียน(Register)
                     </a>
-                    <a href="#" className="block text-left mx-2 p-2 text-xs">
+                    </Link>
+                    <Link href="#">
+                    <a className="block text-left mx-2 p-2 text-xs">
                       Forget Password?
                     </a>
+                    </Link>
                   </div>
                   <button
                     type="submit"

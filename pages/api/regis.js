@@ -9,7 +9,7 @@ export default async function handler (req,res){
   try {
 
     const regisuser = await Regisuser.create(req.body);
-    res.redirect('/login')
+    res.redirect('/')
     if(!regisuser){
         return res.json({code:'User not created'})
     }

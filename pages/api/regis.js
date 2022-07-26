@@ -6,14 +6,30 @@ import connect from '../../utils/connectDB'
 connect()
 
 export default async function handler (req,res){
-  try {
+  const { method } = req;
+  if( method === 'GET') {
+    try {
 
-    const regisuser = await Regisuser.create(req.body);
-    res.redirect('/Home')
-    if(!regisuser){
-        return res.json({code:'User not created'})
+      const regisuser = await Regisuser.fine();
+      res.status(200).json(resiguser);
+
+    } catch (error) {
+      res.status(400).json({status:'Not able to create a new user.'})
     }
-  } catch (error) {
-    res.status(400).json({status:'Not able to create a new user.'})
-    }
+
+  }
+
+  if( method === 'POST') {
+    try {
+
+      const regisuser = await Regisuser.create(req.body);
+      res.redirect('/home')
+      if(!regisuser){
+          return res.json({code:'User not created'})
+      }
+    } catch (error) {
+      res.status(400).json({status:'Not able to create a new user.'})
+      }
+  }
+  
   }
